@@ -62,6 +62,7 @@ const Checkout = () => {
        })),
      };
     */
+
     try {
       const requestBody = {
         productId: cart[0]._id,

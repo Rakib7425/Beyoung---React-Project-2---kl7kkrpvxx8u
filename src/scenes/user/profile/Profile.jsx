@@ -15,7 +15,9 @@ const Profile = () => {
 
 
   // console.log(user);
-
+  const handleUpdateImage = () => {
+    console.log("ggg");
+  }
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -83,6 +85,7 @@ const Profile = () => {
                               backgroundColor: 'transparent'
                             },
                           }}
+                          onClick={handleUpdateImage}
                         >
                           Update image
                         </Button>
