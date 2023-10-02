@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getUser } from '../../../store/userSlice';
 import { toast } from 'react-toastify';
+import { SIGNUP_API_URL, projectId } from '../../../utils/api';
 
 
 export default function Register({ setValue, handleClose, }) {
@@ -26,7 +27,7 @@ export default function Register({ setValue, handleClose, }) {
 
         try {
             let headersList = {
-                "projectId": "kl7kkrpvxx8u",
+                "projectId": projectId,
                 "Content-Type": "application/json"
             }
 
@@ -37,7 +38,7 @@ export default function Register({ setValue, handleClose, }) {
                 "appType": "linkedin"
             });
 
-            let response = await fetch("https://academics.newtonschool.co/api/v1/user/signup", {
+            let response = await fetch(SIGNUP_API_URL, {
                 method: "POST",
                 body: bodyContent,
                 headers: headersList
