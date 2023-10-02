@@ -102,8 +102,8 @@ export default function Register({ setValue, handleClose, }) {
                         onChange={e => setPassword(e.target.value)}
                     />
                 </Box>
-
             </DialogContent >
+
             <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
                 <Button onClick={handleRegister}>Register</Button>
