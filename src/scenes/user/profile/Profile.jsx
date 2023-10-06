@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Profile = () => {
   const user = useSelector((state) => state.user.userDetails)
@@ -109,11 +110,19 @@ const Profile = () => {
                           <h6 className="m-4">Bio </h6>
                         </MDBCol> */}
                         <MDBCol>
-                          <p className="bio">
+                          {/* <p className="bio">
                             Hello, I am a pre final year student at Indian Institute
                             of Technology Roorkee (IIT'R). I am a tech enthusiast
                             and like to learn new stuffs related to technology.
-                          </p>
+                          </p> */}
+                          {
+                            user.token &&
+                            <Link to={'user/orders'}>
+                              <Button onClick={handleClose} variant='outlined' sx={{ color: 'black' }}>
+                                My orders
+                              </Button>
+                            </Link>
+                          }
                         </MDBCol>
                       </MDBRow>
                     </MDBContainer>

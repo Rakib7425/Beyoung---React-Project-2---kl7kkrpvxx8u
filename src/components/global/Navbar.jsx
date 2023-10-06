@@ -53,7 +53,7 @@ function Navbar() {
           onClick={() => navigate("/")}
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
-          fontSize={30}
+          fontSize={20}
         >
           BE👧YOUNG
         </Box>
