@@ -115,14 +115,7 @@ const Profile = () => {
                             of Technology Roorkee (IIT'R). I am a tech enthusiast
                             and like to learn new stuffs related to technology.
                           </p> */}
-                          {
-                            user.token &&
-                            <Link to={'user/orders'}>
-                              <Button onClick={handleClose} variant='outlined' sx={{ color: 'black' }}>
-                                My orders
-                              </Button>
-                            </Link>
-                          }
+
                         </MDBCol>
                       </MDBRow>
                     </MDBContainer>
@@ -136,9 +129,21 @@ const Profile = () => {
 
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} variant='outlined' sx={{ color: 'blue ' }}>
-            Log Out
-          </Button>
+
+          {
+            user.token &&
+
+            <>
+              <Link to={'user/orders'}>
+                <Button onClick={handleClose} variant='outlined' sx={{ color: 'black' }}>
+                  My orders
+                </Button>
+              </Link>
+              <Button onClick={handleClose} variant='outlined' sx={{ color: 'blue ' }}>
+                Log Out
+              </Button>
+            </>
+          }
           <Button onClick={handleClose} variant='outlined' sx={{ color: 'red' }}>
             Close
           </Button>
