@@ -10,6 +10,7 @@ import {
   increaseCount,
   removeFromCart,
   setIsCartOpen,
+  emptyCart
 } from "../../store";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +27,8 @@ const CartMenu = () => {
   const cart = useSelector((state) => state.cart.cart);
 
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
+
+  console.log(cart);
 
   const totalPrice = cart.reduce((total, item) => {
     return total + item.count * item.price;
@@ -129,23 +132,43 @@ const CartMenu = () => {
 
             {
               cart && cart.length > 0 &&
-              <Button
-                sx={{
-                  backgroundColor: shades.primary[400],
-                  color: "white",
-                  borderRadius: 0,
-                  minWidth: "100%",
-                  padding: "20px 40px",
-                  m: "20px 0",
-                  "&:hover": { backgroundColor: "green" }
-                }}
-                onClick={() => {
-                  navigate("/checkout");
-                  dispatch(setIsCartOpen({}));
-                }}
-              >
-                CHECKOUT
-              </Button>
+              <>
+
+                <Button
+                  sx={{
+                    backgroundColor: shades.primary[400],
+                    color: "white",
+                    borderRadius: 0,
+                    minWidth: "100%",
+                    padding: "20px 40px",
+                    m: "20px 0",
+                    "&:hover": { backgroundColor: "green" }
+                  }}
+                  onClick={() => {
+                    navigate("/checkout");
+                    dispatch(setIsCartOpen({}));
+                  }}
+                >
+                  CHECKOUT
+                </Button>
+                <Button
+                  sx={{
+                    backgroundColor: shades.primary[400],
+                    color: "white",
+                    borderRadius: 0,
+                    minWidth: "100%",
+                    padding: "20px 40px",
+                    m: "20px 0",
+                    "&:hover": { backgroundColor: "green" }
+                  }}
+                  onClick={() => {
+                    dispatch(emptyCart());
+                  }}
+                >
+                  Clear cart
+                </Button>
+
+              </>
             }
             {
               cart && cart.length < 1 && (

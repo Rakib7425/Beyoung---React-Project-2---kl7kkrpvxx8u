@@ -17,7 +17,9 @@ const Profile = () => {
 
   // console.log(user);
   const handleUpdateImage = () => {
-    console.log("ggg");
+    console.log("url not working");
+
+
   }
 
   const handleClickOpen = () => {

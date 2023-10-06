@@ -10,6 +10,7 @@ import { BUY_NOW_API_URL } from "../../utils/api";
 import { toast } from "react-toastify";
 import Success from "./Success";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/Loading";
 
 /**
  * 
@@ -25,6 +26,8 @@ const Checkout = () => {
 
   const [isSuccess, setIsSuccess] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
   const cart = useSelector((state) => state.cart.cart);
   const isFirstStep = activeStep === 0;
   const isSecondStep = activeStep === 1;
@@ -64,6 +67,7 @@ const Checkout = () => {
     */
 
     try {
+      setIsLoading(true);
       const requestBody = {
         productId: cart[0]._id,
         quantity: cart[0].count,
@@ -93,13 +97,15 @@ const Checkout = () => {
       console.log(result);
 
       if (result.status === 'success') {
+        setIsLoading(false);
         setIsSuccess(true);
         toast.success('Order Placed!')
       } else {
-        toast.warn('Somting Going Wrong!');
+        toast.warn('Something Going Wrong!');
       }
     } catch (error) {
       // console.log(error);
+      setIsLoading(false);
       navigate('/')
       toast.warn('Login Required, login and order any item!');
 
@@ -119,7 +125,7 @@ const Checkout = () => {
 
 
 
-  return (
+  return isLoading ? <Loading /> : (
     <Box width="80%" m="100px auto">
 
       <Stepper activeStep={activeStep} sx={{ m: "20px 0" }}>
@@ -207,10 +213,12 @@ const Checkout = () => {
                   {!isSecondStep ? "Next" : "Place Order"}
 
                 </Button>
+
               </Box>
             </form>
           )}
         </Formik>
+
       </Box>
     </Box >
   );
