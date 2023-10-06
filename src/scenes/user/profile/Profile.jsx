@@ -132,7 +132,6 @@ const Profile = () => {
 
           {
             user.token &&
-
             <>
               <Link to={'user/orders'}>
                 <Button onClick={handleClose} variant='outlined' sx={{ color: 'black' }}>
