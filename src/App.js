@@ -34,7 +34,9 @@ function App() {
 					<Route path='user/orders' element={<Orders />} />
 				</Routes>
 				<CartMenu />
+
 				<Footer />
+
 				<BackToUp
 					style={{
 						zIndex: "3",
