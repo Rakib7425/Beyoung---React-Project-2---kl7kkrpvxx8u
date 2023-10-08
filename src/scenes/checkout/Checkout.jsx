@@ -261,7 +261,7 @@ const checkoutSchema = [
       street2: yup.string(),
       city: yup.string().required("required"),
       state: yup.string().required("required"),
-      zipCode: yup.string().required("required"),
+      zipCode: yup.number().required("required"),
     }),
     shippingAddress: yup.object().shape({
       isSameAddress: yup.boolean(),
