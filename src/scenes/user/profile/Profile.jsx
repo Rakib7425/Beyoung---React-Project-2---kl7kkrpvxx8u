@@ -19,7 +19,6 @@ const Profile = () => {
   const handleUpdateImage = () => {
     console.log("url not working");
 
-
   }
 
   const handleClickOpen = () => {
