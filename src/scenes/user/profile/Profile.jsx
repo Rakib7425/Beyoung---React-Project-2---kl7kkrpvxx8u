@@ -35,8 +35,8 @@ const Profile = () => {
       <Avatar onClick={handleClickOpen} alt="userAvatar" src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-orange.png"
         sx={{ width: '25px', height: '25px' }}
       />
-      <Dialog
 
+      <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="User-Profile"
