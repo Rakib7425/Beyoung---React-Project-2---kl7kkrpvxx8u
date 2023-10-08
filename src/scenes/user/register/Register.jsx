@@ -12,7 +12,6 @@ import { getUser } from '../../../store/userSlice';
 import { toast } from 'react-toastify';
 import { SIGNUP_API_URL, projectId } from '../../../utils/api';
 
-
 export default function Register({ setValue, handleClose, }) {
     const [userData, setUserData] = useState([])
     const [name, setName] = useState('');
