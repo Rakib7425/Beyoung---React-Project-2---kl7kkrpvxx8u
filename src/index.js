@@ -24,7 +24,7 @@ root.render(
 	// <React.StrictMode>
 	<Provider store={store}>
 		<ThemeProvider theme={theme}>
-			<ToastContainer theme='dark' autoClose={2000} />
+			<ToastContainer theme='dark' autoClose={1500} />
 			<CssBaseline />
 			<App />
 		</ThemeProvider>
