@@ -41,7 +41,7 @@ const Login = ({ handleClose }) => {
         });
 
         let data = await response.json();
-        console.log(data);
+        // console.log(data);
         if (data.token) {
             setIsValidUser(true);
             setUserData(data);

@@ -6,12 +6,15 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getUser } from '../../../store/userSlice';
 
 const Profile = () => {
   const user = useSelector((state) => state.user.userDetails)
   const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+
   const [imageUrl, setImageUrl] = useState(user?.profileImage || 'https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-orange.png');
 
 
@@ -27,6 +30,11 @@ const Profile = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleLogout = () => {
+    handleClose();
+    dispatch(getUser(null));
   };
 
   return (
@@ -113,7 +121,7 @@ const Profile = () => {
                         <MDBCol>
                           {/* <p className="bio">
                             Hello, I am a pre final year student at Indian Institute
-                            of Technology Roorkee (IIT'R). I am a tech enthusiast
+                            of Technology Rourke (IIT'R). I am a tech enthusiast
                             and like to learn new stuffs related to technology.
                           </p> */}
 
@@ -139,7 +147,7 @@ const Profile = () => {
                   My orders
                 </Button>
               </Link>
-              <Button onClick={handleClose} variant='outlined' sx={{ color: 'blue ' }}>
+              <Button onClick={handleLogout} variant='outlined' sx={{ color: 'blue ' }}>
                 Log Out
               </Button>
             </>
