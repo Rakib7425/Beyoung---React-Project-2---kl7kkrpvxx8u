@@ -93,7 +93,6 @@ const Login = ({ handleClose }) => {
                     />
                 </Box>
 
-
             </DialogContent >
             <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>
