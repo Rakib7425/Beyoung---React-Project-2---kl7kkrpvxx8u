@@ -6,6 +6,7 @@ function Footer() {
   const {
     palette: { neutral },
   } = useTheme();
+
   return (
     <Box marginTop="70px" padding="40px 0" backgroundColor={neutral.light}>
       <Box
