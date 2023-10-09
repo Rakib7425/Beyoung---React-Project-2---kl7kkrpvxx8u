@@ -2,8 +2,16 @@ import styled from "@emotion/styled";
 import { Box, Button } from "@mui/material";
 import { shades } from "../../theme";
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 const Success = () => {
+    const user = useSelector((state) => state.user.userDetails)
+    const navigate = useNavigate();
+
+
+    if (!user) {
+        navigate('/');
+    }
+
 
     const Body = styled('div')({
         textAlign: 'center',
@@ -32,7 +40,6 @@ const Success = () => {
         marginLeft: '-30px',
     });
 
-    const navigate = useNavigate();
     return (
         <>
             <Body>

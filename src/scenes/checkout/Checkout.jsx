@@ -94,7 +94,7 @@ const Checkout = () => {
         body: JSON.stringify(requestBody),
       });
       const result = await response.json();
-      console.log(result);
+      // console.log(result);
 
       if (result.status === 'success') {
         setIsLoading(false);
@@ -103,6 +103,7 @@ const Checkout = () => {
       } else {
         toast.warn('Something Going Wrong!');
       }
+
     } catch (error) {
       // console.log(error);
       setIsLoading(false);
