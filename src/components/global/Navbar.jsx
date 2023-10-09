@@ -11,8 +11,8 @@ import { shades } from "../../theme";
 import { setIsCartOpen } from "../../store";
 import NotUser from '../../scenes/user/NotUser'
 import Profile from "../../scenes/user/profile/Profile";
-import { useEffect } from "react";
-import Search from "./Search";
+// import { useEffect } from "react";
+// import Search from "./Search";
 
 function Navbar() {
   const navigate = useNavigate();
