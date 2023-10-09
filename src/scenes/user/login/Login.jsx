@@ -77,7 +77,6 @@ const Login = ({ handleClose }) => {
                     <EmailRounded sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
 
                     <TextField id="input-with-sx" margin="dense" label="Email" variant="standard" fullWidth
-
                         onChange={e => setEmail(e.target.value)}
                     />
                 </Box>
