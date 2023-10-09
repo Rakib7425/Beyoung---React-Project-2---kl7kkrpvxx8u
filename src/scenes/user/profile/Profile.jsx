@@ -9,6 +9,7 @@ import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getUser } from '../../../store/userSlice';
+import { toast } from 'react-toastify';
 
 const Profile = () => {
   const user = useSelector((state) => state.user.userDetails)
@@ -35,6 +36,7 @@ const Profile = () => {
   const handleLogout = () => {
     handleClose();
     dispatch(getUser(null));
+    toast.success(`user logged out successfully !`);
   };
 
   return (

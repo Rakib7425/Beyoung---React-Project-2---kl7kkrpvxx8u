@@ -19,7 +19,7 @@ function Footer() {
       >
         <Box width="clamp(20%, 30%, 40%)">
           <Typography
-            variant="h1"
+            variant="h2"
             fontWeight="bold"
             mb="30px"
             color={shades.secondary[500]}
@@ -66,6 +66,7 @@ function Footer() {
           </Typography>
           <Typography mb="30px">(222)333-4444</Typography>
         </Box>
+
       </Box>
     </Box>
   );

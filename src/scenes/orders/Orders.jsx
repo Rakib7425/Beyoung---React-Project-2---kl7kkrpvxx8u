@@ -9,13 +9,15 @@ import Paper from '@mui/material/Paper';
 import { useEffect, useState } from 'react';
 import { projectId } from '../../utils/api';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const Orders = () => {
     const [orders, setOrders] = useState([])
     const [rows, setRows] = useState([])
     const user = useSelector((state) => state.user.userDetails);
-
+    const navigate = useNavigate();
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
             backgroundColor: theme.palette.common.black,
@@ -61,8 +63,12 @@ const Orders = () => {
 
         }
 
-        getOrders();
-
+        if (user) {
+            getOrders();
+        } else {
+            toast.warn(`user logged out`);
+            navigate('/');
+        }
 
         // eslint-disable-next-line
     }, [user]);
