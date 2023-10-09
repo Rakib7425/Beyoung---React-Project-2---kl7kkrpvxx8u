@@ -9,6 +9,7 @@ import Checkout from "./scenes/checkout/Checkout";
 import Confirmation from "./scenes/checkout/Confirmation";
 import BackToUp from "@uiw/react-back-to-top";
 import Orders from "./scenes/orders/Orders";
+import { useSelector } from "react-redux";
 
 const ScrollToTop = () => {
 	const { pathname } = useLocation();
@@ -21,6 +22,8 @@ const ScrollToTop = () => {
 };
 
 function App() {
+	const user = useSelector((state) => state.user.userDetails);
+
 	return (
 		<div className='app'>
 			<BrowserRouter>
@@ -31,7 +34,7 @@ function App() {
 					<Route path='/' element={<Home />} />
 					<Route path='item/:itemId' element={<ItemDetails />} />
 					<Route path='checkout' element={<Checkout />} />
-					<Route path='checkout/success' element={<Confirmation />} />
+					{user && <Route path={`checkout/success`} element={<Confirmation />} />}
 					<Route path='user/orders' element={<Orders />} />
 				</Routes>
 				<CartMenu />

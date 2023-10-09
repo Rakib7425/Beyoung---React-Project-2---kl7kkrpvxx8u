@@ -119,7 +119,7 @@ const Checkout = () => {
      });*/
   }
   useEffect(() => {
-    if (isSuccess) navigate('/checkout/success');
+    if (isSuccess && user) navigate('/checkout/success');
 
     // eslint-disable-next-line
   }, [isSuccess, isSecondStep]);
