@@ -19,10 +19,12 @@ function Navbar() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
   const user = useSelector((state) => state.user.userDetails)
-  useEffect(() => {
-    console.log(user);
-    // eslint-disable-next-line
-  }, [open])
+
+
+  // useEffect(() => {
+  // console.log(user);
+  // eslint-disable-next-line
+  // }, [open])
 
   return (
     <Box
