@@ -60,6 +60,7 @@ function Navbar() {
         >
           BE👧YOUNG
         </Box>
+
         {/* <Box
             onClick={() => navigate("/")}
             sx={{ "&:hover": { cursor: "pointer", color: shades.primary[300] } }}
