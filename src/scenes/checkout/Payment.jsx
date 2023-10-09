@@ -7,7 +7,6 @@ const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
   const user = useSelector((state) => state.user.userDetails)
 
 
-
   return (
     <Box m="30px 0">
       {/* CONTACT INFO */}
