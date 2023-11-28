@@ -78,7 +78,7 @@ const Orders = () => {
         // if (!!orders) {
 
         // console.log(orders);
-        const rws = orders.map((item) => createData(item.order._id, item.order.items[0].product.name, item.order.items.length, 24, (item.createdAt.toLocaleString()), item.order.totalPrice))
+        const rws = orders.map((item) => createData(item.order._id, item.order?.items[0]?.product?.name, item.order.items.length, 24, (item.createdAt.toLocaleString()), item.order.totalPrice))
         // console.log(rws);
         setRows(rws);
         // }
