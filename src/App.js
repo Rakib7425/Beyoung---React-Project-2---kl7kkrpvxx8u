@@ -11,6 +11,7 @@ import BackToUp from "@uiw/react-back-to-top";
 import Orders from "./scenes/orders/Orders";
 import { useSelector } from "react-redux";
 
+
 const ScrollToTop = () => {
 	const { pathname } = useLocation();
 
